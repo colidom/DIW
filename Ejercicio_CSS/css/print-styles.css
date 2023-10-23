@@ -2,11 +2,10 @@
 p {
     font-weight: normal;
     font-size: 16px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 /* Estilo para la imagen en la impresión */
 img {
-    display: block;
-    margin: 0 auto;
     max-width: 100%;
 }
