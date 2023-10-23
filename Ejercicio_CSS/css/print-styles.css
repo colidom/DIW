@@ -1,0 +1,12 @@
+/* Estilo para los párrafos en la impresión */
+p {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* Estilo para la imagen en la impresión */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}

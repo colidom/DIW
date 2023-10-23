@@ -1,0 +1,7 @@
+/* Estilo para centrar la imagen solo en pantalla */
+@media screen {
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}

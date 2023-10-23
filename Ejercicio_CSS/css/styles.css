@@ -1,14 +1,12 @@
-/* Estilo para los párrafos y la imagen en cualquier dispositivo */
+/* Cargar estilos para pantallas */
+@import url("./screen-styles.css") screen;
+
+/* Cargar estilos para impresión */
+@import url("./print-styles.css") print;
+
+/* Estilo común para todos los elementos */
 p,
 img {
     font-weight: bold;
     font-size: 20px;
-}
-
-/* Estilo para centrar la imagen solo en pantalla */
-@media screen {
-    img {
-        display: block;
-        margin: 0 auto;
-    }
 }
