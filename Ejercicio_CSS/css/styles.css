@@ -1,0 +1,14 @@
+/* Estilo para los párrafos y la imagen en cualquier dispositivo */
+p,
+img {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilo para centrar la imagen solo en pantalla */
+@media screen {
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
