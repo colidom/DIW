@@ -1,0 +1,39 @@
+ul {
+    list-style: none;
+}
+ul h2 {
+    font-size: 16px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+p,
+ol {
+    color: darkred;
+}
+
+.resaltado {
+    font-weight: bold;
+}
+
+div.resaltado {
+    color: darkslategrey;
+}
+div.resaltado p {
+    color: blueviolet;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+span {
+    font-family: Arial;
+    text-decoration: underline;
+}
+
+#sin_subrayar {
+    text-decoration: none;
+}
