@@ -42,7 +42,15 @@
 }
 
 /* 8. Eliminar el borde gris por defecto de todos los elementos */
-* {
+#cabecera,
+#menu,
+#lateral,
+#lateral #noticias,
+#lateral #publicidad,
+#contenido,
+#contenido #principal,
+#contenido #secundario,
+#pie {
     border: none;
 }
 
