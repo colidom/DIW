@@ -99,7 +99,6 @@
 #cabecera h1 {
     background-image: url("../img/imagen.png");
     background-repeat: no-repeat;
-    padding-left: 30px; /* Ajusta según el ancho del logotipo */
 }
 
 #cabecera #buscador input {
