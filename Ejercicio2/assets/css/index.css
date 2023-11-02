@@ -1,0 +1,167 @@
+/* 1. #cabecera con relleno de 1em */
+#cabecera {
+    padding: 1em;
+}
+
+/* 2. #menu con relleno de 0.5em y margen inferior de 0.5em */
+#menu {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* 3. Resto de elementos con 0.5em de relleno, excepto #pie */
+#noticias,
+#publicidad,
+#principal,
+#secundario {
+    padding: 0.5em;
+}
+
+#pie {
+    padding: 0.5em 0; /* Relleno solo en zona superior e inferior */
+}
+
+/* 4. Separación entre .articulo de 1em */
+.articulo {
+    margin-bottom: 1em;
+}
+
+/* 5. Márgenes de imágenes en .articulo de 0.5em en todos los lados */
+.articulo img {
+    margin: 0.5em;
+}
+
+/* 6. #publicidad separado 1em de su elemento superior */
+#publicidad {
+    margin-top: 1em;
+}
+
+/* 7. #pie con margen superior de 1em */
+#pie {
+    margin-top: 1em;
+}
+
+/* 8. Eliminar el borde gris por defecto de todos los elementos */
+* {
+    border: none;
+}
+
+/* 9. #menu con borde inferior de 1 píxel y azul (#004C99) */
+#menu {
+    border-bottom: 1px solid #004c99;
+}
+
+/* 10. #noticias con borde de 1 píxel y gris claro (#C5C5C5) */
+#noticias {
+    border: 1px solid #c5c5c5;
+}
+
+/* 11. #publicidad con borde discontinuo de 1 píxel y color #CC6600 */
+#publicidad {
+    border: 1px dashed #cc6600;
+}
+
+/* 12. Lateral #secundario con borde de 1 píxel y color #CC6600 */
+#secundario {
+    border: 1px solid #cc6600;
+}
+
+/* 13. #pie con bordes superior e inferior de 1 píxel y color gris claro (#C5C5C5) */
+#pie {
+    border-top: 1px solid #c5c5c5;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+/* 14. #noticias y #pie con color de fondo gris claro (#F8F8F8) */
+#noticias,
+#pie {
+    background-color: #f8f8f8;
+}
+
+/* 15. #publicidad con color de fondo amarillo claro (#FFF6CD) */
+#publicidad {
+    background-color: #fff6cd;
+}
+
+/* 16. <h2> del lateral #secundario con color de fondo #DB905C y padding de .2em */
+#secundario h2 {
+    background-color: #db905c;
+    padding: 0.2em;
+}
+
+/* 17. Fondo del elemento #menu con imagen fondo_menu.gif */
+#menu {
+    background-image: url("../img/imagen.png");
+    background-repeat: repeat;
+}
+
+/* 18. Logotipo del sitio en el <h1> de #cabecera con imagen de fondo (logo.gif) */
+#cabecera h1 {
+    background-image: url("../img/imagen.png");
+    background-repeat: no-repeat;
+    padding-left: 30px; /* Ajusta según el ancho del logotipo */
+}
+
+#cabecera #buscador input {
+    border: 1px solid black;
+}
+
+/* 19. Fuente base de la página */
+body {
+    color: #000;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* 20. <h2> de .articulo con color #CC6600, tamaño de letra 1.6em, interlineado 1.2 y margen inferior de 0.3em */
+.articulo h2 {
+    color: #cc6600;
+    font-size: 1.6em;
+    line-height: 1.2;
+    margin-bottom: 0.3em;
+}
+
+/* 21. Margen a la derecha de los elementos del #menu y enlaces blancos de tamaño 1.3em */
+#menu li {
+    margin-right: 1em;
+}
+
+#menu a {
+    color: #fff;
+    font-size: 1.3em;
+}
+
+/* 22. Tamaño de texto de todos los contenidos de #lateral a 0.9em */
+#lateral {
+    font-size: 0.9em;
+}
+
+/* Fecha de noticias en línea y color gris claro #999 */
+#noticias .fecha {
+    display: block;
+    color: #999;
+}
+
+/* <h3> de #noticias con color #003366 */
+#noticias h3 {
+    color: #003366;
+}
+
+/* 23. Texto del #publicidad de color gris oscuro #555 y enlaces de color #CC6600 */
+#publicidad {
+    color: #555;
+}
+
+#publicidad a {
+    color: #cc6600;
+}
+
+/* 24. Enlaces en .articulo de color #CC6600 y párrafos con margen superior e inferior de 0.3em */
+.articulo a {
+    color: #cc6600;
+}
+
+.articulo p {
+    margin: 0.3em 0;
+}
