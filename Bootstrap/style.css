@@ -29,3 +29,11 @@
     background-color: #e4e4e4;
     border: 1px solid grey;
 }
+.row {
+    height: 100px;
+    background-color: #a4a4a4;
+}
+.col {
+    background-color: #e4e4e4;
+    border: 1px solid grey;
+}
