@@ -12,3 +12,20 @@
     background-color: #e4e4e4;
     border: 1px solid grey;
 }
+
+.align-items-start {
+    height: 100px;
+    background-color: green;
+}
+.align-items-center {
+    height: 100px;
+    background-color: blue;
+}
+.align-items-end {
+    height: 100px;
+    background-color: red;
+}
+.col {
+    background-color: #e4e4e4;
+    border: 1px solid grey;
+}
