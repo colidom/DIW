@@ -5,3 +5,10 @@
     background-color: #e4e4e4;
     border: 1px solid grey;
 }
+
+.col,
+.col-4,
+.col-8 {
+    background-color: #e4e4e4;
+    border: 1px solid grey;
+}
