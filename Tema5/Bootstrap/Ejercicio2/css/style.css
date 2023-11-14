@@ -1,0 +1,19 @@
+.filas {
+    border: 1px solid black;
+}
+.fila-verde {
+    background-color: greenyellow;
+}
+
+.fila-roja {
+    background-color: red;
+}
+.fila-violet {
+    background-color: violet;
+}
+.fila-naranja {
+    background-color: orange;
+}
+.fila-azul {
+    background-color: rgb(36, 77, 190);
+}
