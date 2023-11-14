@@ -1,0 +1,18 @@
+.container {
+    margin: 3rem;
+}
+
+.container-center {
+    background-color: red;
+    margin: 0.3rem;
+}
+
+.container-left {
+    background-color: blue;
+    margin: 0.3rem;
+}
+
+.container-right {
+    background-color: greenyellow;
+    margin: 0.3rem;
+}
