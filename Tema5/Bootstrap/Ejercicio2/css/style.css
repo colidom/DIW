@@ -10,12 +10,13 @@
 }
 .fila-violet {
     background-color: violet;
+    height: 3rem;
 }
 .fila-naranja {
     background-color: orange;
-    height: 8rem;
+    height: 3rem;
 }
 .fila-azul {
     background-color: rgb(36, 77, 190);
-    height: 8rem;
+    height: 3rem;
 }
