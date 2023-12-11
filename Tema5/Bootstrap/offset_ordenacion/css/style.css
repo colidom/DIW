@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+div {
+    height: 100px;
+    border: 1px solid white;
+}
+.col-lg-12 {
+    background: lightgreen;
+}
+.azul {
+    background-color: lightblue;
+}
+.esp {
+    background: cyan;
+}
+.gris {
+    background: grey;
+}
+.naranja {
+    background: orange;
+}
