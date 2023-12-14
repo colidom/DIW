@@ -9,40 +9,50 @@
     </head>
     <body>
         <div class="container mt-4">
-            <h2>Autorrellenar Tabla</h2>
-
-            <!-- Formulario -->
-            <form id="formulario">
-                <div class="mb-3">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" required />
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <h2 class="text-center">Autorrellenar Tabla</h2>
+                    <!-- Formulario -->
+                    <form id="formulario">
+                        <div class="mb-3">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion">Descripción:</label>
+                            <input type="text" class="form-control" id="descripcion" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaInicio">Fecha inicio:</label>
+                            <input type="date" class="form-control" id="fechaInicio" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaFin">Fecha finalización:</label>
+                            <input type="date" class="form-control" id="fechaFin" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="tecnologias">Tecnologías utilizadas:</label>
+                            <input type="text" class="form-control" id="tecnologias" required />
+                        </div>
+                    </form>
+                    <!-- Botones de acciones -->
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-warning" onclick="agregarFilaYGuardarEnCookie()">
+                                Guardar(5 min)
+                            </button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-danger" onclick="limpiarCookieYRecargarPagina()">
+                                Borrar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="descripcion">Descripción:</label>
-                    <input type="text" class="form-control" id="descripcion" required />
-                </div>
-                <div class="mb-3">
-                    <label for="fechaInicio">Fecha inicio:</label>
-                    <input type="date" class="form-control" id="fechaInicio" required />
-                </div>
-                <div class="mb-3">
-                    <label for="fechaFin">Fecha finalización:</label>
-                    <input type="date" class="form-control" id="fechaFin" required />
-                </div>
-                <div class="mb-3">
-                    <label for="tecnologias">Tecnologías utilizadas:</label>
-                    <input type="text" class="form-control" id="tecnologias" required />
-                </div>
-                <button type="button" class="btn btn-primary" onclick="agregarFila()">
-                    Agregar a la Tabla (Sin persistencia)
-                </button>
-                <button type="button" class="btn btn-warning" onclick="agregarFilaYGuardarEnCookie()">
-                    Agregar a la Tabla (Con persistencia)
-                </button>
-                <button type="button" class="btn btn-danger" onclick="limpiarCookieYRecargarPagina()">
-                    Borrar datos de la tabla
-                </button>
-            </form>
+            </div>
 
             <hr />
 
