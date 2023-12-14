@@ -36,19 +36,27 @@
                         </div>
                     </form>
                     <!-- Botones de acciones -->
-                    <div class="row justify-content-center">
-                        <div class="col-sm-4">
-                            <button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar</button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button type="button" class="btn btn-warning" onclick="agregarFilaYGuardarEnCookie()">
-                                Guardar(5 min)
-                            </button>
-                        </div>
-                        <div class="col-sm-4">
-                            <button type="button" class="btn btn-danger" onclick="limpiarCookieYRecargarPagina()">
-                                Borrar
-                            </button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+                                <button type="button" class="btn btn-primary mb-2" onclick="agregarFila()">
+                                    Agregar
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-warning mb-2"
+                                    onclick="agregarFilaYGuardarEnCookie()"
+                                >
+                                    Guardar (5 min)
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-danger mb-2"
+                                    onclick="limpiarCookieYRecargarPagina()"
+                                >
+                                    Borrar
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
