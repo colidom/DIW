@@ -1,12 +1,13 @@
 // Al cargar la página
 window.onload = function () {
     var datosGuardados = obtenerDatosGuardados();
+    // Si no hay datos guardados, se configura la fecha de hoy
+    document.getElementById("fechaInicio").value = obtenerFechaHoy();
+    document.getElementById("fechaFin").value = obtenerFechaHoy();
+
     if (datosGuardados) {
         document.getElementById("tablaBody").innerHTML = datosGuardados;
-    } else {
-        // Si no hay datos guardados, se configura la fecha de hoy
-        document.getElementById("fechaInicio").value = obtenerFechaHoy();
-        document.getElementById("fechaFin").value = obtenerFechaHoy();
+        actualizarTabla();
     }
 };
 
@@ -143,6 +144,7 @@ function obtenerFechaHoy() {
     return yyyy + "-" + mm + "-" + dd;
 }
 
+// Función para actualizar la tabla con los datos de la cookie
 function actualizarTabla() {
     var datosGuardados = obtenerDatosGuardados();
     if (datosGuardados) {
