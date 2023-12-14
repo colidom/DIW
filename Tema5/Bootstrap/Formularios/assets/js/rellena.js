@@ -46,10 +46,49 @@ function agregarFila() {
         fechaFin +
         "</td><td>" +
         tecnologias +
-        "</td></tr>";
+        "</td><td><button onclick='editarFila(this)' class='btn btn-info'>Editar</button></td><td><button onclick='eliminarFila(this)' class='btn btn-danger'>Eliminar</button></td></tr>";
 
     document.getElementById("tablaBody").innerHTML += fila;
     document.getElementById("formulario").reset();
+}
+
+// Función para editar una fila
+function editarFila(button) {
+    var row = button.parentNode.parentNode; // Obtener la fila actual
+    var cols = row.getElementsByTagName("td");
+
+    // Convertir el botón de Editar en Guardar
+    var editButton = cols[cols.length - 2].getElementsByTagName("button")[0];
+    editButton.innerHTML = "Guardar";
+    editButton.setAttribute("onclick", "guardarFila(this)");
+
+    // Permitir la edición de los campos
+    for (var i = 0; i < cols.length - 2; i++) {
+        var content = cols[i].innerHTML;
+        cols[i].innerHTML = "<input type='text' value='" + content + "'>";
+    }
+}
+
+// Función para guardar los cambios editados
+function guardarFila(button) {
+    var row = button.parentNode.parentNode; // Obtener la fila actual
+    var cols = row.getElementsByTagName("td");
+
+    // Actualizar los valores con los nuevos valores de los inputs
+    for (var i = 0; i < cols.length - 2; i++) {
+        var input = cols[i].getElementsByTagName("input")[0];
+        cols[i].innerHTML = input.value;
+    }
+
+    // Convertir el botón Guardar en Editar
+    button.innerHTML = "Editar";
+    button.setAttribute("onclick", "editarFila(this)");
+}
+
+// Función para eliminar una fila
+function eliminarFila(button) {
+    var row = button.parentNode.parentNode; // Obtener la fila actual
+    row.parentNode.removeChild(row); // Eliminar la fila de la tabla
 }
 
 // Función para agregar fila a la tabla y guardar en cookie por 5 minutos
@@ -76,7 +115,7 @@ function agregarFilaYGuardarEnCookie() {
         fechaFin +
         "</td><td>" +
         tecnologias +
-        "</td></tr>";
+        "</td><td><button onclick='editarFila(this)' class='btn btn-info'>Editar</button></td><td><button onclick='eliminarFila(this)' class='btn btn-danger'>Eliminar</button></td></tr>";
 
     document.getElementById("tablaBody").innerHTML += fila;
     document.getElementById("formulario").reset();
