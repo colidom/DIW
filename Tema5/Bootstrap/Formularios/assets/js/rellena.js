@@ -16,7 +16,7 @@ function obtenerDatosGuardados() {
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i].split("=");
         if (cookie[0] === "datosTabla") {
-            return cookie[1];
+            return JSON.parse(cookie[1]); // Parsear el JSON almacenado en la cookie
         }
     }
     return null;
@@ -104,24 +104,26 @@ function agregarFilaYGuardarEnCookie() {
         return;
     }
 
-    var fila =
-        "<tr><td>" +
-        nombre +
-        "</td><td>" +
-        descripcion +
-        "</td><td>" +
-        fechaInicio +
-        "</td><td>" +
-        fechaFin +
-        "</td><td>" +
-        tecnologias +
-        "</td><td><button onclick='editarFila(this)' class='btn btn-info'>Editar</button></td><td><button onclick='eliminarFila(this)' class='btn btn-danger'>Eliminar</button></td></tr>";
+    // Crear un objeto con los datos de la fila
+    var nuevaFila = {
+        nombre: nombre,
+        descripcion: descripcion,
+        fechaInicio: fechaInicio,
+        fechaFin: fechaFin,
+        tecnologias: tecnologias,
+    };
 
-    document.getElementById("tablaBody").innerHTML += fila;
-    document.getElementById("formulario").reset();
+    // Obtener los datos existentes de la cookie
+    var datosGuardados = obtenerDatosGuardados() || [];
 
-    var datosTabla = document.getElementById("tablaBody").innerHTML;
-    document.cookie = "datosTabla=" + datosTabla + "; max-age=300"; // 300 segundos = 5 minutos
+    // Agregar la nueva fila a los datos existentes
+    datosGuardados.push(nuevaFila);
+
+    // Guardar los datos actualizados en la cookie
+    document.cookie = "datosTabla=" + JSON.stringify(datosGuardados) + "; max-age=300"; // 300 segundos = 5 minutos
+
+    // Actualizar la tabla mostrando los datos
+    actualizarTabla();
 }
 
 // Función para limpiar la cookie y recargar la página
@@ -139,4 +141,28 @@ function obtenerFechaHoy() {
     var yyyy = today.getFullYear();
 
     return yyyy + "-" + mm + "-" + dd;
+}
+
+function actualizarTabla() {
+    var datosGuardados = obtenerDatosGuardados();
+    if (datosGuardados) {
+        var tablaBody = document.getElementById("tablaBody");
+        tablaBody.innerHTML = ""; // Limpiar la tabla antes de actualizarla
+
+        datosGuardados.forEach(function (fila) {
+            var filaHTML =
+                "<tr><td>" +
+                fila.nombre +
+                "</td><td>" +
+                fila.descripcion +
+                "</td><td>" +
+                fila.fechaInicio +
+                "</td><td>" +
+                fila.fechaFin +
+                "</td><td>" +
+                fila.tecnologias +
+                "</td><td><button onclick='editarFila(this)' class='btn btn-info'>Editar</button></td><td><button onclick='eliminarFila(this)' class='btn btn-danger'>Eliminar</button></td></tr>";
+            tablaBody.innerHTML += filaHTML;
+        });
+    }
 }

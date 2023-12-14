@@ -33,12 +33,14 @@
                     <label for="tecnologias">Tecnologías utilizadas:</label>
                     <input type="text" class="form-control" id="tecnologias" required />
                 </div>
-                <button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar a la Tabla</button>
+                <button type="button" class="btn btn-primary" onclick="agregarFila()">
+                    Agregar a la Tabla (Sin persistencia)
+                </button>
                 <button type="button" class="btn btn-warning" onclick="agregarFilaYGuardarEnCookie()">
-                    Guardar en Cookie por 5 minutos
+                    Agregar a la Tabla (Con persistencia)
                 </button>
                 <button type="button" class="btn btn-danger" onclick="limpiarCookieYRecargarPagina()">
-                    Limpiar Cookie y Recargar
+                    Borrar datos de la tabla
                 </button>
             </form>
 
