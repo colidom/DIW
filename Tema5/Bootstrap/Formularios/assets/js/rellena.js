@@ -1,3 +1,7 @@
+// Ponemos fecha de hoy en ambos input de fechaInicio y fechaFin
+document.getElementById("fechaInicio").value = obtenerFechaHoy();
+document.getElementById("fechaFin").value = obtenerFechaHoy();
+
 function agregarFila() {
     var nombre = document.getElementById("nombre").value;
     var descripcion = document.getElementById("descripcion").value;
@@ -65,4 +69,13 @@ function limpiarCookieYRecargarPagina() {
     document.cookie = "datosTabla=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     alert("Cookie borrada, haga click en aceptar para recargar la página!");
     location.reload();
+}
+
+function obtenerFechaHoy() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0"); // Enero es 0!
+    var yyyy = today.getFullYear();
+
+    return yyyy + "-" + mm + "-" + dd;
 }
