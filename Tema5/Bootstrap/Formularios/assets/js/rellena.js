@@ -1,7 +1,28 @@
-// Ponemos fecha de hoy en ambos input de fechaInicio y fechaFin
-document.getElementById("fechaInicio").value = obtenerFechaHoy();
-document.getElementById("fechaFin").value = obtenerFechaHoy();
+// Al cargar la página
+window.onload = function () {
+    var datosGuardados = obtenerDatosGuardados();
+    if (datosGuardados) {
+        document.getElementById("tablaBody").innerHTML = datosGuardados;
+    } else {
+        // Si no hay datos guardados, se configura la fecha de hoy
+        document.getElementById("fechaInicio").value = obtenerFechaHoy();
+        document.getElementById("fechaFin").value = obtenerFechaHoy();
+    }
+};
 
+// Función para obtener los datos guardados en la cookie
+function obtenerDatosGuardados() {
+    var cookies = document.cookie.split("; ");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].split("=");
+        if (cookie[0] === "datosTabla") {
+            return cookie[1];
+        }
+    }
+    return null;
+}
+
+// Función para agregar fila a la tabla
 function agregarFila() {
     var nombre = document.getElementById("nombre").value;
     var descripcion = document.getElementById("descripcion").value;
@@ -71,6 +92,7 @@ function limpiarCookieYRecargarPagina() {
     location.reload();
 }
 
+// Función para obtener la fecha de hoy en formato YYYY-MM-DD
 function obtenerFechaHoy() {
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, "0");
