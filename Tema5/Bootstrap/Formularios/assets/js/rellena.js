@@ -1,19 +1,15 @@
-// Función para agregar filas a la tabla
 function agregarFila() {
-    // Capturar datos del formulario
     var nombre = document.getElementById("nombre").value;
     var descripcion = document.getElementById("descripcion").value;
     var fechaInicio = document.getElementById("fechaInicio").value;
     var fechaFin = document.getElementById("fechaFin").value;
     var tecnologias = document.getElementById("tecnologias").value;
 
-    // Validar que se hayan ingresado datos
     if (!nombre || !descripcion || !fechaInicio || !fechaFin || !tecnologias) {
         alert("Por favor, complete todos los campos del formulario.");
         return;
     }
 
-    // Crear una nueva fila
     var fila =
         "<tr><td>" +
         nombre +
@@ -27,9 +23,46 @@ function agregarFila() {
         tecnologias +
         "</td></tr>";
 
-    // Agregar la fila a la tabla
     document.getElementById("tablaBody").innerHTML += fila;
-
-    // Limpiar el formulario después de agregar la fila
     document.getElementById("formulario").reset();
+}
+
+// Función para agregar fila a la tabla y guardar en cookie por 5 minutos
+function agregarFilaYGuardarEnCookie() {
+    var nombre = document.getElementById("nombre").value;
+    var descripcion = document.getElementById("descripcion").value;
+    var fechaInicio = document.getElementById("fechaInicio").value;
+    var fechaFin = document.getElementById("fechaFin").value;
+    var tecnologias = document.getElementById("tecnologias").value;
+
+    if (!nombre || !descripcion || !fechaInicio || !fechaFin || !tecnologias) {
+        alert("Por favor, complete todos los campos del formulario.");
+        return;
+    }
+
+    var fila =
+        "<tr><td>" +
+        nombre +
+        "</td><td>" +
+        descripcion +
+        "</td><td>" +
+        fechaInicio +
+        "</td><td>" +
+        fechaFin +
+        "</td><td>" +
+        tecnologias +
+        "</td></tr>";
+
+    document.getElementById("tablaBody").innerHTML += fila;
+    document.getElementById("formulario").reset();
+
+    var datosTabla = document.getElementById("tablaBody").innerHTML;
+    document.cookie = "datosTabla=" + datosTabla + "; max-age=300"; // 300 segundos = 5 minutos
+}
+
+// Función para limpiar la cookie y recargar la página
+function limpiarCookieYRecargarPagina() {
+    document.cookie = "datosTabla=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    alert("Cookie borrada, haga click en aceptar para recargar la página!");
+    location.reload();
 }
